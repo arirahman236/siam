@@ -38,11 +38,12 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'e_msmhs'
+            'provider' => 'users',
         ],
+
         'api' => [
-            'driver' => 'passport',
-            'provider' => 'e_msmhs',
+            'driver' => 'token',
+            'provider' => 'users',
             'hash' => false,
         ],
     ],
@@ -69,10 +70,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-        'e_msmhs' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Emsmhs::class,
-        ],
+
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
